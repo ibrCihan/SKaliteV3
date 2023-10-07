@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SKalite.Context;
 using SKalite.Repositories;
+using SKalite.Service.EventNotification;
 using SKalite.Service.General;
 using SKalite.Service.User;
 
@@ -19,6 +20,17 @@ namespace SKalite
             services.AddScoped<ITimePeriodService, TimePeriodManager>();
             services.AddScoped<IUnitChiefService, UnitChiefManager>();
             services.AddScoped<IUnitService, UnitManager>();
+
+            services.AddScoped<IEventCategoryService, EventCategoryManager>();
+            services.AddScoped<IEventNotificationFileService, EventNotificationFileManager>();
+            services.AddScoped<IEventNotificationService, EventNotificationManager>();
+            services.AddScoped<IEventNotificationProcessService, EventNotificationProcessManager>();
+            services.AddScoped<IEventNotificationResultService, EventNotificationResultManager>();
+
+
+
+
+
 
 
 
