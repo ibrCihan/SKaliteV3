@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SKalite.Entity.Document;
+using System.Reflection.Metadata;
 
 namespace SKalite.Context
 {
@@ -21,6 +23,13 @@ namespace SKalite.Context
         public DbSet<User> Users { get; set; }
         public DbSet<UserTitle> UserTitles { get; set; }
 
-        
+        public DbSet<Entity.Document.Document> Documents { get; set; }
+        public DbSet<DocumentCategory> DocumentCategories { get; set; }
+        public DbSet<DocumentFiles> DocumentFiles { get; set; }
+        public DbSet<DocumentProcess> DocumentProcesses { get; set; }
+        public DbSet<DocumentType> DocumentTypes { get; set; }
+
+
+
     }
 }

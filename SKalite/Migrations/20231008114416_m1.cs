@@ -12,6 +12,100 @@ namespace SKalite.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "DocumentCategories",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DocumentName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedUserId = table.Column<int>(type: "int", nullable: true),
+                    CreatedUserId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DocumentCategories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DocumentFiles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FilePath = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DocumentId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedUserId = table.Column<int>(type: "int", nullable: true),
+                    CreatedUserId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DocumentFiles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DocumentProcesses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DocumentId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedUserId = table.Column<int>(type: "int", nullable: true),
+                    CreatedUserId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DocumentProcesses", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Documents",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DocumentName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DocumentCategoryId = table.Column<int>(type: "int", nullable: false),
+                    DocumentTypeId = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedUserId = table.Column<int>(type: "int", nullable: true),
+                    CreatedUserId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Documents", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DocumentTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TypeName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    UpdatedUserId = table.Column<int>(type: "int", nullable: true),
+                    CreatedUserId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DocumentTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "EventCategories",
                 columns: table => new
                 {
@@ -416,6 +510,21 @@ namespace SKalite.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "DocumentCategories");
+
+            migrationBuilder.DropTable(
+                name: "DocumentFiles");
+
+            migrationBuilder.DropTable(
+                name: "DocumentProcesses");
+
+            migrationBuilder.DropTable(
+                name: "Documents");
+
+            migrationBuilder.DropTable(
+                name: "DocumentTypes");
+
             migrationBuilder.DropTable(
                 name: "EventNotificationFiles");
 
