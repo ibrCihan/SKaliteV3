@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SKalite", "SKalite\SKalite.csproj", "{B9A2DCD9-BD5D-4CB5-96E5-FE7F90907ECE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKalite", "SKalite\SKalite.csproj", "{B9A2DCD9-BD5D-4CB5-96E5-FE7F90907ECE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SKaliteUI", "SKaliteUI\SKaliteUI.csproj", "{F317E3B8-341D-49C3-AC78-93321BF4BADE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B9A2DCD9-BD5D-4CB5-96E5-FE7F90907ECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9A2DCD9-BD5D-4CB5-96E5-FE7F90907ECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9A2DCD9-BD5D-4CB5-96E5-FE7F90907ECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F317E3B8-341D-49C3-AC78-93321BF4BADE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F317E3B8-341D-49C3-AC78-93321BF4BADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F317E3B8-341D-49C3-AC78-93321BF4BADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F317E3B8-341D-49C3-AC78-93321BF4BADE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

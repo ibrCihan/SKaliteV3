@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SKalite.Context;
 using SKalite.Repositories;
+using SKalite.Service.Document;
 using SKalite.Service.EventNotification;
 using SKalite.Service.General;
 using SKalite.Service.User;
@@ -27,13 +28,11 @@ namespace SKalite
             services.AddScoped<IEventNotificationProcessService, EventNotificationProcessManager>();
             services.AddScoped<IEventNotificationResultService, EventNotificationResultManager>();
 
-
-
-
-
-
-
-
+            services.AddScoped<IDocumentCategoryService, DocumentCategoryManager>();
+            services.AddScoped<IDocumentFilesService, DocumentFilesManager>();
+            services.AddScoped<IDocumentService, DocumentManager>();
+            services.AddScoped<IDocumentProcessService, DocumentProcessManager>();
+            services.AddScoped<IDocumentTypeService, DocumentTypeManager>();
 
 
 
