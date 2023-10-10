@@ -68,8 +68,6 @@ namespace SKalite.Repositories
             {
                 return null;
             }
-            
-            
         }
     }
 }

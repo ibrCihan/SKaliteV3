@@ -35,5 +35,10 @@ namespace SKalite
         {
             return _repository.GetById(id);
         }
+
+        public User GetByUserControl(string TCKNumber, string Password)
+        {
+            return _repository.GetAll().FirstOrDefault(x => x.TCKNumber == TCKNumber && x.Password==Password);
+        }
     }
 }

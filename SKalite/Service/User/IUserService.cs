@@ -9,6 +9,7 @@ namespace SKalite
         User Delete(int id);
         User GetById(int id);
         List<User> GetAll();
+        User GetByUserControl(string TCKNumber, string Password);
 
     }
 }
